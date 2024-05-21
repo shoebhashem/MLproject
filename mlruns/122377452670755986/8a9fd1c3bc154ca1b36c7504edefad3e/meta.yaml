@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/122377452670755986/8a9fd1c3bc154ca1b36c7504edefad3e/artifacts
+end_time: 1715428450858
+entry_point_name: ''
+experiment_id: '122377452670755986'
+lifecycle_stage: active
+run_id: 8a9fd1c3bc154ca1b36c7504edefad3e
+run_name: charming-stag-151
+run_uuid: 8a9fd1c3bc154ca1b36c7504edefad3e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1715428450658
+status: 3
+tags: []
+user_id: SHASHEM1
