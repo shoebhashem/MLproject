@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/122377452670755986/32788aa0cfe34f83942b376f092cb9a9/artifacts
+end_time: 1715423928439
+entry_point_name: ''
+experiment_id: '122377452670755986'
+lifecycle_stage: active
+run_id: 32788aa0cfe34f83942b376f092cb9a9
+run_name: salty-owl-8
+run_uuid: 32788aa0cfe34f83942b376f092cb9a9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1715423915289
+status: 4
+tags: []
+user_id: SHASHEM1

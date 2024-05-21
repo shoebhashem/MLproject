@@ -1,0 +1,106 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/carPricePredictor/pipeline/stage_01_data_ingestion.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 401686a0b136ae98ccee1d6b2a31c6fe
+      size: 1016
+    - path: src/carPricePredictor/pipeline/stage_01_data_ingestion.py
+      hash: md5
+      md5: 543056a60f896a8da4117b9662d719c9
+      size: 928
+    outs:
+    - path: artifacts/data_ingestion/
+      hash: md5
+      md5: 4b7c62ddf6619f1487f5ce44251b942d.dir
+      size: 107800733
+      nfiles: 2
+  prepare_base_model:
+    cmd: python src/cnnClassifier/pipeline/stage_02_prepare_base_model.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 6286ced447f29c62da3694f1c45c0dbb
+      size: 592
+    - path: src/cnnClassifier/pipeline/stage_02_prepare_base_model.py
+      hash: md5
+      md5: 3d6e00bcfd577886a45db4fda9c952db
+      size: 999
+    params:
+      params.yaml:
+        CLASSES: 2
+        IMAGE_SIZE:
+        - 224
+        - 224
+        - 3
+        INCLUDE_TOP: false
+        LEARNING_RATE: 0.01
+        WEIGHTS: imagenet
+    outs:
+    - path: artifacts/prepare_base_model
+      hash: md5
+      md5: d81ada31234b365f83a0a93ebc2bfb66.dir
+      size: 118054560
+      nfiles: 2
+  training:
+    cmd: python src/carPricePredictor/pipeline/stage_03_model_trainer.py
+    deps:
+    - path: artifacts/data_preprocess/
+      hash: md5
+      md5: 72e57659b629d0efe7e302b09e467e4b.dir
+      size: 5439607
+      nfiles: 1
+    - path: config/config.yaml
+      hash: md5
+      md5: 401686a0b136ae98ccee1d6b2a31c6fe
+      size: 1016
+    - path: src/carPricePredictor/pipeline/stage_03_model_trainer.py
+      hash: md5
+      md5: a44ba293ba90946f8a83e096fc761b06
+      size: 890
+    outs:
+    - path: artifacts/training/
+      hash: md5
+      md5: 8dbe628d7985a1a992cc27c2b626c1a1.dir
+      size: 1678083
+      nfiles: 3
+  evaluation:
+    cmd: python src/carPricePredictor/pipeline/stage_04_model_evaluation.py
+    deps:
+    - path: artifacts/training
+      hash: md5
+      md5: 8dbe628d7985a1a992cc27c2b626c1a1.dir
+      size: 1678083
+      nfiles: 3
+    - path: src/carPricePredictor/pipeline/stage_04_model_evaluation.py
+      hash: md5
+      md5: e91a5bc74585831fc9f17368bdab6545
+      size: 950
+  data_preprocess:
+    cmd: python src/carPricePredictor/pipeline/stage_02_data_preprocess.py
+    deps:
+    - path: artifacts/data_ingestion/
+      hash: md5
+      md5: 4b7c62ddf6619f1487f5ce44251b942d.dir
+      size: 107800733
+      nfiles: 2
+    - path: config/config.yaml
+      hash: md5
+      md5: 401686a0b136ae98ccee1d6b2a31c6fe
+      size: 1016
+    - path: src/carPricePredictor/pipeline/stage_02_data_preprocess.py
+      hash: md5
+      md5: 095ef149ee966360ae5e891cda7bd47f
+      size: 886
+    params:
+      params.yaml:
+        NUMBER_OF_TOP_MAKE: 8
+        NUMBER_OF_TOP_MODEL: 3
+    outs:
+    - path: artifacts/data_preprocess/
+      hash: md5
+      md5: 72e57659b629d0efe7e302b09e467e4b.dir
+      size: 5439607
+      nfiles: 1

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/122377452670755986/d5a0be2112ad432eaa1fb95875a962c1/artifacts
+end_time: 1715420205791
+entry_point_name: ''
+experiment_id: '122377452670755986'
+lifecycle_stage: active
+run_id: d5a0be2112ad432eaa1fb95875a962c1
+run_name: languid-perch-702
+run_uuid: d5a0be2112ad432eaa1fb95875a962c1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1715420205639
+status: 4
+tags: []
+user_id: SHASHEM1

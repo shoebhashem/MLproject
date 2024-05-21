@@ -1,0 +1,37 @@
+artifacts_root: artifacts
+
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  source_URL: https://drive.google.com/file/d/1PvQpJRxqROB3UWhKrSRx2QDP4Wp1nOVi/view?usp=sharing
+  local_data_file: artifacts/data_ingestion/data.zip
+  unzip_dir: artifacts/data_ingestion
+
+
+data_preprocess:
+  root_dir: artifacts/data_preprocess
+  local_data_file: artifacts/data_ingestion
+  
+
+training:
+  root_dir: artifacts/training
+  trained_model_path: artifacts/training
+  root_dir_data: artifacts/data_preprocess
+  root_dir_X_test: artifacts/training/X_test
+  root_dir_y_test: artifacts/training/y_test
+  root_dir_params: artifacts/training/params
+
+evaluation:
+  root_dir: artifacts/evaluation
+  source_dir: artifacts/training/
+  dt_model_path: artifacts/training/decision_tree_model.pkl
+  rf_model_path: artifacts/training/random_forest_model.pkl
+  mlflow_uri: http://127.0.0.1:8080
+  source_dir_x_test: artifacts/training/X_test
+  source_dir_y_test: artifacts/training/y_test
+  source_dir_params: artifacts/training/params
+
+
+
+
+

@@ -1,0 +1,41 @@
+stages:
+  data_ingestion:
+    cmd: python src/carPricePredictor/pipeline/stage_01_data_ingestion.py
+    deps:
+      - src/carPricePredictor/pipeline/stage_01_data_ingestion.py
+      - config/config.yaml
+    outs:
+      - artifacts/data_ingestion/
+
+  data_preprocess:
+    cmd: python src/carPricePredictor/pipeline/stage_02_data_preprocess.py
+    deps:
+      - src/carPricePredictor/pipeline/stage_02_data_preprocess.py
+      - config/config.yaml
+      - artifacts/data_ingestion/
+    params:
+      - NUMBER_OF_TOP_MAKE
+      - NUMBER_OF_TOP_MODEL
+    outs:
+      - artifacts/data_preprocess/
+      
+
+  training:
+    cmd: python src/carPricePredictor/pipeline/stage_03_model_trainer.py
+    deps:
+      - src/carPricePredictor/pipeline/stage_03_model_trainer.py
+      - config/config.yaml
+      - artifacts/data_preprocess/
+
+    outs:
+      - artifacts/training/
+
+  evaluation:
+    cmd: python src/carPricePredictor/pipeline/stage_04_model_evaluation.py
+    deps:
+      - src/carPricePredictor/pipeline/stage_04_model_evaluation.py
+      - artifacts/training
+
+    # metrics:
+    #  - scores.json:
+    #      cache: false

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/122377452670755986/fc8b5815aaaf44799140668fd00bf9fe/artifacts
+end_time: 1715420088681
+entry_point_name: ''
+experiment_id: '122377452670755986'
+lifecycle_stage: active
+run_id: fc8b5815aaaf44799140668fd00bf9fe
+run_name: debonair-cow-465
+run_uuid: fc8b5815aaaf44799140668fd00bf9fe
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1715420088505
+status: 4
+tags: []
+user_id: SHASHEM1
