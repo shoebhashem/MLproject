@@ -2,7 +2,7 @@
 scikit-learn==1.2.2
 streamlit
 pandas 
-gdown
+#gdown
 #dvc
 #mlflow==2.2.2
 #notebook
@@ -16,8 +16,4 @@ numpy
 joblib==1.3.2
 #types-PyYAML
 #scipy
-#Flask
-#Flask-Cors
-#-e 
-os
-datetime
+#-e
