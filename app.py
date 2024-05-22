@@ -64,6 +64,13 @@ class PredictionPipeline:
 
 def show_predict_page():
     st.title("Car Price Predictor")
+
+    st.write("""
+    This application was created for educational purposes and utilizes outdated data, 
+    which may not accurately reflect current car prices. It serves as an exploration of
+    tools like DVC, MLflow, and various machine learning algorithms.
+    """)
+
     st.write("""### We need some information to predict the price of your car""")
 
     # Define models for each make
@@ -92,6 +99,8 @@ def show_predict_page():
         # Call predict_price method of PredictionPipeline class
         result = pipeline.predict_price(user_data)
         st.write("Predicted Price: somewhere between $", result)
+
+    st.write("\n\nCreated by Shoeb Hashem")
 
 if __name__ == "__main__":
     show_predict_page()
