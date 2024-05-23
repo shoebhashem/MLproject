@@ -67,8 +67,16 @@ def show_predict_page():
 
     st.write("""
     This application was created for educational purposes and utilizes outdated data, 
-    which may not accurately reflect current car prices. It serves as an exploration of
-    tools like DVC, MLflow, and various machine learning algorithms.
+    which may not accurately reflect current car prices. This work explores the comprehensive
+    lifecycle of a machine learning (ML) project, focusing on the development of a prototype
+    application for car price prediction. Emphasizing efficiency, reproducibility, and collaboration, 
+    the project integrates essential tools like DVC and MLFlow to establish a robust framework. 
+    The work presents both functional and non-functional requirements, providing insights into 
+    data management, model training, deployment automation, monitoring, and maintenance. The software 
+    architecture and workflow, is emphasizing scalability and modularity. Detailed implementations cover
+    data ingestion, preprocessing, model training, evaluation, and prediction. Continuous integration and
+    deployment (CI/CD) pipelines are explored, utilizing Amazon Cloud (ECR and EC2) and Streamlit.io for 
+    deployment.
     """)
 
     st.write("""### We need some information to predict the price of your car""")
