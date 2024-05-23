@@ -79,7 +79,7 @@ def show_predict_page():
     deployment.
     """)
 
-    st.write("""### We need some information to predict the price of your car""")
+    st.write("""### I need some information to predict the price of your car""")
 
     # Define models for each make
     make = st.selectbox("Brand", list(make_and_models.keys()))
