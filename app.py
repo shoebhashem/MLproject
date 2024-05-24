@@ -108,7 +108,7 @@ def show_predict_page():
         result = pipeline.predict_price(user_data)
         st.write("Predicted Price: somewhere between $", result)
 
-    st.write("\n\nCreated by Shoeb Hashem")
+    st.write("\n\nCreated by Shoeb Hashem, shoeb.hashem@gmail.com")
 
 if __name__ == "__main__":
     show_predict_page()
